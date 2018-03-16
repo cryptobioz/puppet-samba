@@ -4,8 +4,9 @@ class samba::server inherits samba::common {
   }
 
   $samba_service_name = $::lsbdistcodename ? {
-    'jessie'  => 'smbd',
-    default   => 'samba',
+    'jessie' => 'smbd',
+    'Core'   => 'smb',
+    default  => 'samba',
   }
 
   service { 'samba':
