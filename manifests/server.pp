@@ -12,7 +12,6 @@ class samba::server inherits samba::common {
     ensure  => running,
     name    => $samba_service_name,
     pattern => 'smbd',
-    restart => '/etc/init.d/samba reload',
     require => Package[samba],
   }
 
